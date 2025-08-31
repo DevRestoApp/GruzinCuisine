@@ -94,19 +94,19 @@ def create_iiko_delivery():
     make_request(url, headers, data)
 
 
-def get_token():
-    url = "https://demo-pro.iikoweb.co.uk/api/auth"
+def get_token(apiLogin: str):
+    url = "https://api-ru.iiko.services/api/1/access_token"
     
     headers = {
         # 'Authorization': 'Bearer ...',
         'Content-Type': 'application/json'
     }
 
-    # data = {
-    #     "apiLogin": "string"
-    # }
+    data = {
+        "apiLogin": apiLogin
+    }
 
-    make_request_get(url, headers)
+    make_request_get(url, headers, data)
 
 
 if __name__ == "__main__":
